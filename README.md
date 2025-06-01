@@ -20,7 +20,7 @@ aks-keyvault-python/
 ├── Dockerfile               # Docker build for the app
 ├── serviceaccount.yaml      # Kubernetes SA annotated with client ID
 ├── deployment.yaml          # Deployment pointing to container image
-├── Tutorial.md              # Full CLI walkthrough with setup and teardown
+├── HOWTO.md                 # Full CLI walkthrough with setup and teardown
 └── README.md                # Project overview and quick start guide
 ```
 
@@ -65,7 +65,7 @@ kubectl apply -f deployment.yaml
 
 ## 📘 Full Tutorial
 
-See [`Tutorial.md`](./Tutorial.md) for:
+See [`HOWTO.md`](./HOWTO.md) for:
 - CLI commands to create the AKS cluster, managed identity, federated credentials
 - Key Vault setup and RBAC config
 - ACR build & deployment
@@ -92,9 +92,3 @@ az group delete --name <resource-group> --yes --no-wait
 ## 📄 License
 
 MIT License – free to use and modify.
-
-## Reference
-
-- [Workload Entity on AKS](https://learn.microsoft.com/en-us/azure/aks/workload-identity-deploy-cluster)
-- [AKS Preview](https://learn.microsoft.com/en-us/azure/aks/draft)
-- [Microsoft Entra Workload ID with AKS](https://learn.microsoft.com/en-us/azure/aks/workload-identity-overview?tabs=dotnet)
