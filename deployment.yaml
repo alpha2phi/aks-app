@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kv-reader
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kv-reader
+  template:
+    metadata:
+      labels:
+        app: kv-reader
+    spec:
+      serviceAccountName: kv-reader-sa
+      containers:
+      - name: kv-reader
+        image: <ACR_NAME>.azurecr.io/kv-reader:v1
+        env:
+        - name: KEY_VAULT_NAME
+          value: "<KEYVAULT_NAME>"
+        - name: SECRET_NAME
+          value: "<SECRET_NAME>"
